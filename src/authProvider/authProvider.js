@@ -1,8 +1,6 @@
 import decodeJwt from 'jwt-decode';
 import { get } from 'lodash';
 
-// const BASE_URL = process.env.REACT_APP_REST_API_AUTHENTICATE_URL;
-
 const authProvider = {
   login: ({ username, password }) => {
     const request = new Request("/user/logins", {
