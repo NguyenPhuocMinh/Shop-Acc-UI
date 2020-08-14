@@ -6,13 +6,8 @@ import {
   BooleanInput,
   SelectInput,
   PasswordInput,
-  ReferenceInput
 } from 'react-admin';
 import { validateRequired } from '../utils/validate';
-
-const optionRenderer = choice => {
-  return `${choice.name}`
-};
 
 const InformationProduct = props => {
   const { classes } = props;

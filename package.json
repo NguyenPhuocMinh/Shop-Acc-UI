@@ -23,7 +23,7 @@
   },
   "scripts": {
     "rest-api-local": "REACT_APP_REST_API_AUTHENTICATE_URL=/rest/api REACT_APP_REST_API_URL=/rest/api REACT_APP_DATA_PROVIDER=restapi npm start",
-    "build-api-local": "REACT_APP_REST_API_AUTHENTICATE_URL=/rest/api REACT_APP_REST_API_URL=/rest/api REACT_APP_DATA_PROVIDER=restapi npm run build",
+    "build-api-local": "REACT_APP_DATA_PROVIDER=restapi npm run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

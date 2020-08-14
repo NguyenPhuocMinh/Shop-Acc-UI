@@ -1,11 +1,11 @@
 import decodeJwt from 'jwt-decode';
 import { get } from 'lodash';
 
-const BASE_URL = process.env.REACT_APP_REST_API_AUTHENTICATE_URL;
+// const BASE_URL = process.env.REACT_APP_REST_API_AUTHENTICATE_URL;
 
 const authProvider = {
   login: ({ username, password }) => {
-    const request = new Request(BASE_URL + "/user/logins", {
+    const request = new Request("/user/logins", {
       method: 'POST',
       body: JSON.stringify({ email: username, password }),
       headers: _prepareHeaders(),
