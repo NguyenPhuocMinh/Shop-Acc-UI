@@ -9,6 +9,9 @@ import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 import { get, isEmpty } from 'lodash';
 
 const PhotoIntroduction = props => {
+
+  const REST_API = process.env.REACT_APP_REST_API_URL;
+
   const { classes, record } = props;
   const [images, setImages] = useState([]);
 
@@ -24,10 +27,10 @@ const PhotoIntroduction = props => {
   const handleUploadImages = e => {
     const formData = new FormData();
     const files = e.target.files;
+    console.log("files", files)
     for (let i = 0; i < files.length; i++) {
       formData.append(`images`, files[i]);
     }
-    const REST_API = process.env.REACT_APP_REST_API_URL;
     const request = new Request(REST_API + `/uploadImages/${accountId}`, {
       method: 'PUT',
       body: formData
@@ -93,7 +96,7 @@ const PhotoIntroduction = props => {
             className={classes.gridList}
           >
             {images && images.map(image => {
-              const srcImage = `http://localhost:8080/${image.path}`;
+              const srcImage = `${REST_API}/${image.path}`;
               return (
                 <img key={image.id} src={srcImage} alt="image" style={{ width: '350px' }} />
               )

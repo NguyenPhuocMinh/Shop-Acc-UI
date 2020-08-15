@@ -22,7 +22,7 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "rest-api-local": "REACT_APP_REST_API_AUTHENTICATE_URL=http://0.0.0.0:8080/rest/api REACT_APP_REST_API_URL=http://0.0.0.0:8080/rest/api/rest/api REACT_APP_DATA_PROVIDER=restapi npm start",
+    "rest-api-local": "REACT_APP_REST_API_AUTHENTICATE_URL=http://0.0.0.0:8080/rest/api REACT_APP_REST_API_URL=http://0.0.0.0:8080/rest/api REACT_APP_DATA_PROVIDER=restapi npm start",
     "build-api-heroku": "REACT_APP_REST_API_AUTHENTICATE_URL=/rest/api REACT_APP_REST_API_URL=/rest/api REACT_APP_DATA_PROVIDER=restapi npm run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
