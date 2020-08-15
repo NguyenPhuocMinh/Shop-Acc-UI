@@ -1,7 +1,7 @@
 {
   "name": "acc-ui",
   "version": "0.1.0",
-  "proxy": "http://localhost:8080",
+  "proxy": "http://0.0.0.0:8080",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -22,8 +22,8 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "rest-api-local": "REACT_APP_REST_API_URL=http://localhost:8080 REACT_APP_DATA_PROVIDER=restapi npm start",
-    "build-api-local": "REACT_APP_DATA_PROVIDER=restapi npm run build",
+    "rest-api-local": "REACT_APP_REST_API_AUTHENTICATE_URL=http://0.0.0.0:8080/rest/api REACT_APP_REST_API_URL=http://0.0.0.0:8080/rest/api/rest/api REACT_APP_DATA_PROVIDER=restapi npm start",
+    "build-api-heroku": "REACT_APP_REST_API_AUTHENTICATE_URL=/rest/api REACT_APP_REST_API_URL=/rest/api REACT_APP_DATA_PROVIDER=restapi npm run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

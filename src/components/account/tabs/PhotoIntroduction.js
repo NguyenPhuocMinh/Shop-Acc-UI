@@ -27,8 +27,8 @@ const PhotoIntroduction = props => {
     for (let i = 0; i < files.length; i++) {
       formData.append(`images`, files[i]);
     }
-    // const REST_API = process.env.REACT_APP_REST_API_URL;
-    const request = new Request(`/uploadImages/${accountId}`, {
+    const REST_API = process.env.REACT_APP_REST_API_URL;
+    const request = new Request(REST_API + `/uploadImages/${accountId}`, {
       method: 'PUT',
       body: formData
     })

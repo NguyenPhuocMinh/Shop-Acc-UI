@@ -23,6 +23,7 @@ const App = () => {
     fetchDataProvider();
   }, [])
 
+  console.log("App -> dataProvider", dataProvider)
   if (!dataProvider) {
     return (
       <div className="loader-container">
@@ -42,7 +43,7 @@ const App = () => {
       catchAll={NotFound}
     >
       {permissions => [
-        <Resource key="Accounts" name="accounts" {...accounts} />,
+        <Resource key="Accounts" name="accounts"  {...accounts} />,
       ]}
     </Admin>
   )
