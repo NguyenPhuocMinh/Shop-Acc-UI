@@ -24,7 +24,7 @@ const authProvider = {
         const decodedToken = decodeJwt(token);
         localStorage.setItem('token', token);
         localStorage.setItem('permissions', get(decodedToken, 'userLogin.permissions'));
-        // localStorage.setItem('userId', decodedToken.userLogin._id);
+        localStorage.setItem('userId', decodedToken.userLogin._id);
         // localStorage.setItem('resetToken', decodedToken.userLogin.adminApp.resetPassword);
         localStorage.setItem('webConfigs', JSON.stringify(webConfigs));
       })

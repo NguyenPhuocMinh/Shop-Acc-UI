@@ -10,15 +10,14 @@ export default {
     changePassword: "Đổi mật khẩu",
     passwordSettingTitle: "Bạn có chắc chắn muốn thay đổi mật khẩu ? ",
     passwordSettingContent: "Nếu chắc chắn, xin hãy nhập kỹ mật khẩu cần thay đổi !",
-    currentPassword: "Mật khẩu hiện tại",
-    newPassword: "Mật khẩu mới",
-    verifiedNewPassword: "Xác nhận mật khẩu",
     forgetPass: "Quên mật khẩu",
     forgetPassSetting: "Bạn bị quên hoặc mất mật khẩu ? ",
     sendMailInfo: "Nhận mã từ mail",
     sendPhoneInfo: "Nhận mã từ số điện thoại",
     cancel: "Hủy",
     confirm: "Xác nhận",
+    reset: 'Reset',
+    required: 'Bắt buộc nhập',
     language: "Ngôn ngữ",
     theme: {
       name: "Màu nền",
@@ -54,6 +53,21 @@ export default {
     kr: 'Hàn Quốc'
   },
   resources: {
+    users: {
+      dialogTitle: 'Đổi mật khẩu',
+      dialogContentText: 'Để đổi mật khẩu, vui lòng nhập mật khẩu cũ và mật khẩu muốn đổi của bạn tại đây, Chúng tôi sẽ gửi thông tin cập nhật!',
+      buttonChangePass: 'Nhấn vào để đổi mật khẩu',
+      currentPassword: 'Mật khẩu hiện tại',
+      newPassword: 'Mật khẩu muốn đổi',
+      verifiedNewPassword: 'Xác nhận mật khẩu mới',
+      errors: {
+        invalidCurrentPassword: 'Mật khẩu hiện tại không đúng',
+        invalidVerifiedNewPassword: 'Xác nhận mật khẩu không trùng khớp'
+      },
+      success: {
+        successChangePass: 'Thay đổi mật khẩu thành công!'
+      }
+    },
     profile: {
       name: 'Hồ sơ',
       firstName: 'Tên',

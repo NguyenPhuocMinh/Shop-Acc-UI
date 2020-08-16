@@ -14,7 +14,6 @@ const addUploadCapabilities = dataProvider => ({
     if (thumbnailValid) {
       arrImages.push(params.data.thumbnail)
     }
-    console.log("arrImages", arrImages)
     if (arrImages.length > 0) {
       let arrPromises = [];
       arrImages.map(image => {

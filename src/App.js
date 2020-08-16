@@ -5,7 +5,8 @@ import authProvider from './authProvider/authProvider';
 import i18nProvider from './i18n/i18nProvider';
 import Dashboard from './layout/DashBoard';
 import NotFound from './layout/NotFound';
-import Menu from './layout/Menu';
+import customRoutes from './routes';
+import Layout from './layout/Layout'
 import accounts from './components/account';
 
 const App = () => {
@@ -38,7 +39,8 @@ const App = () => {
       authProvider={authProvider}
       i18nProvider={i18nProvider}
       dashboard={Dashboard}
-      menu={Menu}
+      customRoutes={customRoutes}
+      layout={Layout}
       catchAll={NotFound}
     >
       {permissions => [

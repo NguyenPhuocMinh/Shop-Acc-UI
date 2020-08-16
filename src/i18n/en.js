@@ -7,6 +7,10 @@ export default {
     configuration: "Configuration",
     changePassword: "Change Password",
     language: "Language",
+    cancel: "Cancel",
+    confirm: "Confirm",
+    reset: 'Reset',
+    required: 'Required',
     theme: {
       name: "Theme",
       light: "Light",
@@ -38,6 +42,21 @@ export default {
     }
   },
   resources: {
+    users: {
+      dialogTitle: 'Change Password',
+      dialogContentText: 'To change the password, please enter the old password and the password to change your your password at here, We will send the update information!',
+      buttonChangePass: 'Click to change password',
+      currentPassword: 'Current Password',
+      newPassword: 'Password you want to change',
+      verifiedNewPassword: 'Verified Password you want to change',
+      errors: {
+        invalidCurrentPassword: 'Invalid Current Password',
+        invalidVerifiedNewPassword: 'Invalid Verified New Password'
+      },
+      success: {
+        successChangePass: 'Success Change Password!'
+      }
+    },
     profile: {
       name: 'Profile',
       firstName: 'Name',
