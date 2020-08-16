@@ -23,7 +23,6 @@ const App = () => {
     fetchDataProvider();
   }, [])
 
-  console.log("App -> dataProvider", dataProvider)
   if (!dataProvider) {
     return (
       <div className="loader-container">

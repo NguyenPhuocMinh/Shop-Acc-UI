@@ -27,7 +27,6 @@ const PhotoIntroduction = props => {
   const handleUploadImages = e => {
     const formData = new FormData();
     const files = e.target.files;
-    console.log("files", files)
     for (let i = 0; i < files.length; i++) {
       formData.append(`images`, files[i]);
     }
