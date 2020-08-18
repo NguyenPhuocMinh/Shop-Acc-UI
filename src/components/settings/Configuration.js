@@ -5,21 +5,26 @@ import {
   useSetLocale,
   Title
 } from 'react-admin';
+import { useSelector, useDispatch } from 'react-redux';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-import useStyles from './styles';
+import useStyles from './utils/styles';
+import { changeTheme } from './Action';
 import ChangePassWord from './ChangePassWord';
 
 const Configuration = () => {
   const translate = useTranslate();
   const locale = useLocale();
+  const setLocale = useSetLocale();
   const classes = useStyles();
+  const theme = useSelector(state => state.theme);
+  const dispatch = useDispatch();
 
   return (
     <Card>
       <Title title={translate('pos.configuration')} />
-      {/* <CardContent>
+      <CardContent>
         <div className={classes.label}>
           {translate('pos.theme.name')}
         </div>
@@ -39,9 +44,17 @@ const Configuration = () => {
         >
           {translate('pos.theme.dark')}
         </Button>
-      </CardContent> */}
-      {/* <CardContent>
+      </CardContent>
+      <CardContent>
         <div className={classes.label}>{translate('pos.language')}</div>
+        <Button
+          variant="contained"
+          className={classes.button}
+          color={locale === 'vn' ? 'primary' : 'default'}
+          onClick={() => setLocale('vn')}
+        >
+          vn
+        </Button>
         <Button
           variant="contained"
           className={classes.button}
@@ -50,23 +63,10 @@ const Configuration = () => {
         >
           en
         </Button>
-        <Button
-          variant="contained"
-          className={classes.button}
-          color={locale === 'fr' ? 'primary' : 'default'}
-          onClick={() => setLocale('fr')}
-        >
-          fr
-        </Button>
-      </CardContent> */}
+      </CardContent>
       <CardContent >
         <div className={classes.label}>{translate('pos.changePassword')}</div>
-        <Button
-          variant="contained"
-          className={classes.button}
-        >
-          <ChangePassWord />
-        </Button>
+        <ChangePassWord />
       </CardContent>
     </Card>
   )

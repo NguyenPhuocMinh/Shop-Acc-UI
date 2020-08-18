@@ -66,8 +66,33 @@ export default {
       avatar: 'Avatar',
       role: 'Role',
     },
-    product: {
-      name: "Product"
+    accounts: {
+      name: 'Account',
+      title: {
+        list: 'List Account',
+        create: 'Create Account',
+        edit: 'Edit Account',
+      },
+      fields: {
+        userName: 'User Name',
+        password: 'Password',
+        price: 'Price Acc',
+        rank: 'Rank',
+        hero: 'Hero',
+        gold: 'Gold',
+        skin: 'Skin',
+        pearl_points: 'Pearl Points',
+        thumbnail: 'Thumbnail',
+        choosesThumbnail: 'Chooses Thumbnail',
+        images: 'Images',
+        choosesImages: 'Chooses Images',
+        activated: 'Activated',
+        status: 'Status'
+      },
+      tabs: {
+        information: 'Information',
+        photoIntroduction: 'Photo Introduction',
+      },
     },
     genres: {
       name: "genres"

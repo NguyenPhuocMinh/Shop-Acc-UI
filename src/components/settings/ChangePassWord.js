@@ -12,9 +12,9 @@ import {
 } from 'react-admin';
 import { connect } from 'react-redux';
 import { Formik, Form } from 'formik';
-import useStyles from './styles';
+import useStyles from './utils/styles';
 import TextFieldCustom from '../../custom/TextFieldCustom';
-import validateForm from './validateForm';
+import validateForm from './utils/validateForm';
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -65,8 +65,13 @@ const ChangePassWord = props => {
   // };
 
   return (
-    <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+    <>
+      <Button
+        variant="contained"
+        className={classes.button}
+        color={openDialog ? 'primary' : 'default'}
+        onClick={handleClickOpen}
+      >
         {translate('resources.users.buttonChangePass')}
       </Button>
       <Dialog
@@ -146,7 +151,7 @@ const ChangePassWord = props => {
           </Formik>
         </DialogContent>
       </Dialog>
-    </div >
+    </>
   );
 };
 

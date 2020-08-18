@@ -8,6 +8,7 @@ import NotFound from './layout/NotFound';
 import customRoutes from './routes';
 import Layout from './layout/Layout'
 import accounts from './components/account';
+import ThemeReducers from './components/settings/ThemeReducers';
 
 const App = () => {
   const [dataProvider, setDataProvider] = useState(null);
@@ -40,6 +41,7 @@ const App = () => {
       i18nProvider={i18nProvider}
       dashboard={Dashboard}
       customRoutes={customRoutes}
+      customReducers={{ theme: ThemeReducers }}
       layout={Layout}
       catchAll={NotFound}
     >
