@@ -3,6 +3,7 @@ import { Admin, Resource } from 'react-admin';
 import dataProviderFactory from "./dataProvider";
 import authProvider from './authProvider/authProvider';
 import i18nProvider from './i18n/i18nProvider';
+import { refreshTokenHandler } from './authProvider/authProvider';
 import Dashboard from './layout/DashBoard';
 import NotFound from './layout/NotFound';
 import customRoutes from './routes';
@@ -13,6 +14,7 @@ import ThemeReducers from './components/settings/ThemeReducers';
 const App = () => {
   const [dataProvider, setDataProvider] = useState(null);
   useEffect(() => {
+    refreshTokenHandler();
     const fetchDataProvider = async () => {
       const dataProviderInstance = await dataProviderFactory(
         process.env.REACT_APP_DATA_PROVIDER || ''
