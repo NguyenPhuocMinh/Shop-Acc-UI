@@ -75,6 +75,11 @@ const InformationProduct = props => {
         className={classes.width_400}
         validate={validateRequired}
       />
+      <TextInput
+        source="numberAcc"
+        formClassName={classes.width_display_margin}
+        className={classes.width_400}
+      />
       <br />
       <BooleanInput source="activated" />
     </FormTab>

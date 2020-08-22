@@ -87,7 +87,8 @@ export default {
         images: 'Images',
         choosesImages: 'Chooses Images',
         activated: 'Activated',
-        status: 'Status'
+        status: 'Status',
+        numberAcc: 'Number Acc'
       },
       tabs: {
         information: 'Information',

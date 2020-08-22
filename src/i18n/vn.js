@@ -102,7 +102,8 @@ export default {
         images: 'Ảnh của acc',
         choosesImages: 'Chọn ảnh chi tiết của acc',
         activated: 'Kích hoạt',
-        status: 'Trạng thái'
+        status: 'Trạng thái',
+        numberAcc: 'Số Id Acc'
       },
       tabs: {
         information: 'Thông tin Account',

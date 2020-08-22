@@ -15,6 +15,7 @@ const addUploadCapabilities = dataProvider => ({
       arrImages.push(params.data.thumbnail)
     }
     if (arrImages.length > 0) {
+      console.log("arrImages > 0", arrImages)
       let arrPromises = [];
       arrImages.map(image => {
         arrPromises.push(convertFileToBase64(image))
@@ -37,9 +38,9 @@ const addUploadCapabilities = dataProvider => ({
     } else {
       const data = { ...params.data };
       const imageUrl = {
-        src: params.data.thumbnail,
+        src: params.previousData.thumbnail,
         title: 'thumbnail'
-      }
+      };
       data.thumbnail = imageUrl;
       return dataProvider.update(resource, {
         ...params,
