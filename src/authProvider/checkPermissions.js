@@ -1,8 +1,8 @@
 const checkPermission = (permissions, roles = []) => {
-  const checkArray = roles.map(role => {
+  const checkRoles = roles.map(role => {
     return permissions.includes(role);
   })
-  return checkArray.includes(true);
+  return checkRoles.includes(true);
 };
 
 const adminRoles = ['ADMIN', 'OPERATOR', 'USER'];

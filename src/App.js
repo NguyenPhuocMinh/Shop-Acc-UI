@@ -3,7 +3,7 @@ import { Admin, Resource } from 'react-admin';
 import dataProviderFactory from "./dataProvider";
 import authProvider from './authProvider/authProvider';
 import i18nProvider from './i18n/i18nProvider';
-import { refreshTokenHandler } from './authProvider/authProvider';
+import { refreshTokenHandler } from './authProvider/authHandler';
 import Dashboard from './layout/DashBoard';
 import NotFound from './layout/NotFound';
 import customRoutes from './routes';
