@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import AppBar from './AppBar';
 import Menu from './Menu';
 import { lightTheme, darkTheme } from './Themes';
+import MyNotification from './Notification';
 
 const CustomSidebar = props => <Sidebar {...props} size={200} />;
 
@@ -18,6 +19,7 @@ const CustomLayout = props => {
       sidebar={CustomSidebar}
       menu={Menu}
       theme={theme}
+      notification={MyNotification}
     />
   );
 }

@@ -9,9 +9,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-import useStyles from './utils/styles';
-import { changeTheme } from './Action';
-import ChangePassWord from './ChangePassWord';
+import useStyles from '../profiles/utils/styles';
+import { changeTheme } from '../../store/actions/themeAction';
+import ChangePassWord from '../profiles/ChangePassWord';
 
 const Configuration = () => {
   const translate = useTranslate();

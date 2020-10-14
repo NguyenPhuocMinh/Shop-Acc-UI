@@ -13,7 +13,7 @@ import {
 import { connect } from 'react-redux';
 import { Formik, Form } from 'formik';
 import useStyles from './utils/styles';
-import TextFieldCustom from '../../custom/TextFieldCustom';
+import TextFieldCustom from '../../customize/TextFieldCustom';
 import validateForm from './utils/validateForm';
 
 const Transition = forwardRef(function Transition(props, ref) {

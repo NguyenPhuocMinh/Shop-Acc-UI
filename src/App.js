@@ -8,8 +8,17 @@ import Dashboard from './layout/DashBoard';
 import NotFound from './layout/NotFound';
 import customRoutes from './routes';
 import Layout from './layout/Layout'
-import accounts from './components/account';
-import ThemeReducers from './components/settings/ThemeReducers';
+import Login from './layout/Login';
+
+// reducers
+import themeReducers from './store/reducers/themeReducer';
+// end reducers
+
+// resources
+import users from './components/users';
+import products from './components/products';
+import productTypes from './components/productTypes';
+// end resources
 
 const App = () => {
   const [dataProvider, setDataProvider] = useState(null);
@@ -19,10 +28,7 @@ const App = () => {
       const dataProviderInstance = await dataProviderFactory(
         process.env.REACT_APP_DATA_PROVIDER || ''
       );
-      setDataProvider(
-        // GOTCHA: dataProviderInstance can be a function
-        () => dataProviderInstance
-      );
+      setDataProvider(() => dataProviderInstance);
     }
     fetchDataProvider();
   }, [])
@@ -43,12 +49,27 @@ const App = () => {
       i18nProvider={i18nProvider}
       dashboard={Dashboard}
       customRoutes={customRoutes}
-      customReducers={{ theme: ThemeReducers }}
+      customReducers={{ theme: themeReducers }}
       layout={Layout}
+      loginPage={Login}
       catchAll={NotFound}
     >
       {permissions => [
-        <Resource key="Accounts" name="accounts"  {...accounts} />,
+        <Resource
+          key="Users"
+          name="users"
+          {...users}
+        />,
+        <Resource
+          key="Products"
+          name="products"
+          {...products}
+        />,
+        <Resource
+          key="ProductTypes"
+          name="productTypes"
+          {...productTypes}
+        />,
       ]}
     </Admin>
   )

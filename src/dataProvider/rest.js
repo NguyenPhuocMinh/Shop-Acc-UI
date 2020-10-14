@@ -1,6 +1,5 @@
 import { fetchUtils } from 'react-admin';
 import jsonServerProvider from 'ra-data-json-server';
-import addUploadFeature from './addUploadFeature';
 
 const REST_API = process.env.REACT_APP_REST_API_URL;
 
@@ -13,16 +12,15 @@ const httpClient = (url, options = {}) => {
 };
 
 const restProvider = jsonServerProvider(REST_API, httpClient);
-const uploadCapableDataProvider = addUploadFeature(restProvider);
 
-const delayedDataProvider = new Proxy(uploadCapableDataProvider, {
+const delayedDataProvider = new Proxy(restProvider, {
   get: (target, name, self) =>
     name === 'then' // as we await for the dataProvider, JS calls then on it. We must trap that call or else the dataProvider will be called with the then method
       ? self
       : (resource, params) =>
         new Promise(resolve =>
           setTimeout(
-            () => resolve(uploadCapableDataProvider[name](resource, params)),
+            () => resolve(restProvider[name](resource, params)),
             500
           )
         ),

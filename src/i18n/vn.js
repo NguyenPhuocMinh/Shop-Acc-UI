@@ -1,7 +1,7 @@
-import vnMessages from "ra-language-vietnamese";
+import raVn from './ra-vn';
 
 export default {
-  ...vnMessages,
+  ...raVn,
   pos: {
     search: "Tìm kiếm",
     configuration: "Cấu hình",
@@ -34,6 +34,8 @@ export default {
       }
     },
     menu: {
+      users: 'Quản lí',
+      products: 'Sản phẩm',
       sales: "Bán hàng",
       catalog: "Catalogue",
       customers: "Clients",
@@ -44,16 +46,15 @@ export default {
       content: "Không tìm thấy trang bạn cần tìm"
     }
   },
-  nationals: {
-    vn: 'Việt Nam',
-    el: 'Anh',
-    cn: 'Trung Quốc',
-    am: 'Mỹ',
-    jp: 'Nhật Bản',
-    kr: 'Hàn Quốc'
-  },
   resources: {
     users: {
+      name: 'Người dùng',
+      fields: {
+        firstName: 'Họ',
+        lastName: 'Tên',
+        gender: 'Giới tính',
+        permissions: 'Quyền truy cập'
+      },
       dialogTitle: 'Đổi mật khẩu',
       dialogContentText: 'Để đổi mật khẩu, vui lòng nhập mật khẩu cũ và mật khẩu muốn đổi của bạn tại đây, Chúng tôi sẽ gửi thông tin cập nhật!',
       buttonChangePass: 'Nhấn vào để đổi mật khẩu',
@@ -66,6 +67,16 @@ export default {
       },
       success: {
         successChangePass: 'Thay đổi mật khẩu thành công!'
+      },
+      permissions: {
+        admin: 'ADMIN',
+        operator: 'OPERATOR',
+        user: 'USER'
+      },
+      genders: {
+        male: 'Nam',
+        female: 'Nữ',
+        unknown: 'Không xác định'
       }
     },
     profile: {
@@ -77,97 +88,29 @@ export default {
       avatar: 'Avatar',
       role: 'Quyền',
     },
-    statusProducts: {
-      stock: 'Còn hàng',
-      outOfStock: 'Hết hàng'
-    },
-    accounts: {
-      name: 'Account',
+    products: {
+      name: 'Sản phẩm',
       title: {
-        list: 'Danh sách Account',
-        create: 'Tạo Account',
-        edit: 'Chỉnh sửa Account',
+        list: 'Danh sách Sản phẩm',
+        create: 'Tạo Sản phẩm',
+        edit: 'Chỉnh sửa Sản phẩm',
       },
       fields: {
-        userName: 'Tên đăng nhập',
-        password: 'Mật khẩu',
-        price: 'Giá Acc',
-        rank: 'Rank',
-        hero: 'Tướng',
-        gold: 'Vàng',
-        skin: 'Trang phục',
-        pearl_points: 'Điểm ngọc',
-        thumbnail: 'Ảnh bìa của acc',
-        choosesThumbnail: 'Chọn ảnh bìa của acc',
-        images: 'Ảnh của acc',
-        choosesImages: 'Chọn ảnh chi tiết của acc',
-        activated: 'Kích hoạt',
-        status: 'Trạng thái',
-        numberAcc: 'Số Id Acc'
-      },
-      tabs: {
-        information: 'Thông tin Account',
-        photoIntroduction: 'Ảnh giới thiệu',
-      },
-      filter: {
-        categoryId: 'Thể loại',
-        imageId: 'Hình ảnh'
-      }
-    },
-    ranks: {
-      name: 'Rank',
-      titles: {
-        list: 'Danh sách Rank',
-        create: 'Tạo Rank',
-        edit: 'Chỉnh sửa Rank',
-      },
-      fields: {
-        name: 'Rank'
-      }
-    },
-    customers: {
-      name: 'Khách hàng',
-      title: {
-        create: 'Tạo khách hàng',
-        edit: 'Chỉnh sửa khách hàng',
-        list: 'Danh sách khách hàng'
-      },
-      label: {
-        information: 'Thông tin',
-        order: 'Đơn hàng'
-      },
-      fields: {
-        firstName: 'Họ',
-        lastName: 'Tên',
-        email: 'Email',
-        idNumber: 'Chứng minh nhân dân',
-        dob: 'Ngày sinh',
-        address: 'Địa chỉ',
-        city: 'Thành phố',
-        order: 'Đặt hàng',
-        total_spent: 'Tổng tiền',
-        description: 'Nội dung',
-        product: 'Sản phẩm',
+        name: 'Tên sản phẩm',
+        smell: 'Hương vị',
+        price: 'Giá tiền',
+        weight: 'Trọng lượng',
+        productType: 'Loại sản phẩm',
         quantity: 'Số lượng',
+        status: 'Trạng thái',
+        activated: 'Hoạt động'
       },
-      fieldGroups: {
-        identity: 'Danh tính',
-        address: 'Địa chỉ sinh sống',
-        order: 'Đơn đặt hàng'
-      }
     },
-    backgrounds: {
-      name: 'Ảnh nền',
-      title: {
-        create: 'Tạo Ảnh nền',
-        edit: 'Chỉnh sửa Ảnh nền',
-        list: 'Danh sách Ảnh nền'
-      },
+    productTypes: {
+      name: 'Loại sản phẩm',
       fields: {
-        backGroundBig: 'Ảnh nền lớn',
-        choosesBackGroundBig: 'Chọn ảnh nền lớn',
-        backGroundSmall: 'Ảnh nền nhỏ',
-        choosesBackGroundSmall: 'Chọn ảnh nền nhỏ'
+        name: 'Loại sản phẩm',
+        activated: 'Hoạt động',
       }
     }
   }

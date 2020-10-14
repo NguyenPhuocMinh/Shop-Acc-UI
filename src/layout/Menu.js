@@ -1,24 +1,29 @@
-import * as React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import {
-  useTranslate,
   DashboardMenuItem,
   MenuItemLink,
-  WithPermissions
+  usePermissions,
+  useTranslate
 } from 'react-admin';
 import SubMenu from './SubMenu';
-
-import accounts from '../components/account';
-import { checkPermission, adminRoles } from '../authProvider/checkPermissions';
+import { useMediaQuery } from '@material-ui/core';
+// icon
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import CollectionsBookmarkIcon from '@material-ui/icons/CollectionsBookmark';
+// end icon
 
 const Menu = props => {
-  const { onMenuClick, dense } = props;
+  const { onMenuClick, dense, logout } = props;
+  const translate = useTranslate();
+  const permissions = usePermissions().permissions;
+  const isXSmall = useMediaQuery(theme => theme.breakpoints.down('xs'));
   const [state, setState] = useState({
-    menuSales: false,
+    menuUsers: false,
+    menuProducts: false,
     menuCustomers: false,
   });
-  const translate = useTranslate();
   const open = useSelector((state) => state.admin.ui.sidebarOpen);
   useSelector((state) => state.theme); // force rerender on theme change
 
@@ -30,31 +35,52 @@ const Menu = props => {
     <div>
       {' '}
       <DashboardMenuItem onClick={onMenuClick} sidebarIsOpen={open} />
-      <WithPermissions
-        render={({ permissions }) =>
-          permissions && checkPermission(permissions, adminRoles) ? (
-            <SubMenu
-              handleToggle={() => handleToggle('menuSales')}
-              isOpen={state.menuSales}
+      <div>
+        {permissions && permissions.includes('ADMIN') ?
+          <SubMenu
+            handleToggle={() => handleToggle('menuUsers')}
+            isOpen={state.menuUsers}
+            sidebarIsOpen={open}
+            name="pos.menu.users"
+            icon={<AccountCircleIcon />}
+            dense={dense}
+          >
+            <MenuItemLink
+              to={`/users`}
+              primaryText={translate('resources.users.name')}
+              leftIcon={<ChevronRightIcon />}
+              onClick={onMenuClick}
               sidebarIsOpen={open}
-              name="pos.menu.sales"
-              icon={<accounts.icon />}
-              dense={dense}
-            >
-              <MenuItemLink
-                to={`/accounts`}
-                primaryText={translate(`resources.accounts.name`, {
-                  smart_count: 2,
-                })}
-                leftIcon={<accounts.icon />}
-                onClick={onMenuClick}
-                sidebarIsOpen={open}
-                dense={dense}
-              />
-            </SubMenu>
-          ) : null
+            />
+          </SubMenu> : null
         }
-      />
+        {permissions && permissions.includes('OPERATOR') ?
+          <SubMenu
+            handleToggle={() => handleToggle('menuProducts')}
+            isOpen={state.menuProducts}
+            sidebarIsOpen={open}
+            name="pos.menu.products"
+            icon={<CollectionsBookmarkIcon />}
+            dense={dense}
+          >
+            <MenuItemLink
+              to={`/products`}
+              primaryText={translate('resources.products.name')}
+              leftIcon={<ChevronRightIcon />}
+              onClick={onMenuClick}
+              sidebarIsOpen={open}
+            />
+            <MenuItemLink
+              to={`/productTypes`}
+              primaryText={translate('resources.productTypes.name')}
+              leftIcon={<ChevronRightIcon />}
+              onClick={onMenuClick}
+              sidebarIsOpen={open}
+            />
+          </SubMenu> : null
+        }
+        {isXSmall && logout}
+      </div>
     </div>
   );
 };

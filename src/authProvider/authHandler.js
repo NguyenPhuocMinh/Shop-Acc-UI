@@ -85,7 +85,7 @@ function checkExpiredTime() {
 };
 
 function getLocalStorage(response) {
-  const { token, refreshToken, expiresIn } = response;
+  const { token, refreshToken, expiresIn, webConfig } = response;
   const decodedToken = decodeJwt(token);
   localStorage.setItem('token', token);
   localStorage.setItem('refreshToken', refreshToken);
@@ -93,6 +93,7 @@ function getLocalStorage(response) {
   localStorage.setItem('expiresAt', Date.now());
   localStorage.setItem('permissions', get(decodedToken, 'userLogin.permissions'));
   localStorage.setItem('userId', decodedToken.userLogin._id);
+  localStorage.setItem('config', JSON.stringify(webConfig));
 };
 
 function _prepareHeaders() {

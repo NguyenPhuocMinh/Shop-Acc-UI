@@ -1,7 +1,6 @@
 import vnMessages from './vn';
 import englishMessages from './en';
 import polyglotI18nProvider from 'ra-i18n-polyglot';
-import { resolveBrowserLocale } from 'react-admin';
 
 const messages = {
   vn: vnMessages,
@@ -9,8 +8,8 @@ const messages = {
 };
 
 const i18nProvider = polyglotI18nProvider(
-  locale => messages[locale] ? messages[locale] : messages.vn,
-  resolveBrowserLocale()
+  locale => locale === 'en' ? messages.en : messages.vn,
+  'vn'
 );
 
 export default i18nProvider;

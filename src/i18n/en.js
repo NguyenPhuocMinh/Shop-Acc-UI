@@ -1,7 +1,7 @@
-import englishMessages from "ra-language-english";
+import raEn from './ra-en';
 
 export default {
-  ...englishMessages,
+  ...raEn,
   pos: {
     search: "Search",
     configuration: "Configuration",
