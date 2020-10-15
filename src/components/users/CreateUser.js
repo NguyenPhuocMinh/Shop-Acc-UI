@@ -2,10 +2,12 @@ import React from 'react';
 import {
   Create,
   SimpleForm,
+} from 'react-admin';
+import {
   TextInput,
   SelectInput,
   AutocompleteArrayInput,
-} from 'react-admin';
+} from '../../customize/InputCustom';
 import useStyles from './style';
 
 const CreateUser = props => {

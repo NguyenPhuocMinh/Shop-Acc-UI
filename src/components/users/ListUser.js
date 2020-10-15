@@ -4,8 +4,10 @@ import {
   Datagrid,
   TextField,
   EmailField,
-  EditButton
+  EditButton,
+  Filter
 } from 'react-admin';
+import { SearchInput } from '../../customize/InputCustom';
 import { get } from 'lodash';
 
 const EditButtonCustom = props => {
@@ -15,6 +17,14 @@ const EditButtonCustom = props => {
     return <EditButton {...props} />
   }
   return null
+};
+
+const ListFilter = props => {
+  return (
+    <Filter {...props}>
+      <SearchInput source="q" alwaysOn />
+    </Filter>
+  )
 }
 
 const ListUser = props => {
@@ -22,6 +32,7 @@ const ListUser = props => {
     <List
       {...props}
       exporter={false}
+      filters={<ListFilter />}
     >
       <Datagrid>
         <TextField source="name" />

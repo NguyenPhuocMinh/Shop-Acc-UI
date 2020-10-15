@@ -4,8 +4,6 @@ import {
   Datagrid,
   EditButton,
   List,
-  SelectField,
-  FunctionField,
   DateField,
   Filter,
   SearchInput

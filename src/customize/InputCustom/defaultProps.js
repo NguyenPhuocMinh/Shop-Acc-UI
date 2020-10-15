@@ -1,5 +1,6 @@
 const defaultProps = {
-  variant: 'filled'
+  variant: 'filled',
+  alwaysOn: false
 };
 
 export default defaultProps;

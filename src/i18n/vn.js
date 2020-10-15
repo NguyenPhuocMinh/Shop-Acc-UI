@@ -49,6 +49,9 @@ export default {
   resources: {
     users: {
       name: 'Người dùng',
+      title: {
+        edit: 'Chỉnh sửa người dùng',
+      },
       fields: {
         firstName: 'Họ',
         lastName: 'Tên',

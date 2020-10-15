@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 import defaultProps from './defaultProps';
 
 const MuiAutocompleteArrayInput = props => {
-  const { variant } = props;
+  const {
+    source,
+  } = props;
   return (
     <AutocompleteArrayInput
       {...props}
-      variant={variant}
+      source={source}
     />
   )
 };
@@ -17,8 +19,8 @@ MuiAutocompleteArrayInput.defaultProps = {
   variant: defaultProps.variant
 }
 
-MuiAutocompleteArrayInput.prototype = {
-  source: PropTypes.string,
+MuiAutocompleteArrayInput.propTypes = {
+  source: PropTypes.string.isRequired,
   variant: PropTypes.string,
 }
 

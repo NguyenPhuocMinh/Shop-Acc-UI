@@ -2,12 +2,14 @@ import React from 'react';
 import {
   Create,
   SimpleForm,
-  TextInput,
-  SelectInput,
-  NumberInput,
-  ReferenceInput,
   BooleanInput
 } from 'react-admin';
+import {
+  TextInput,
+  SelectInput,
+  NumberInputFormat,
+  ReferenceInput
+} from '../../customize/InputCustom';
 import useStyles from './productStyle';
 
 const ProductCreate = props => {
@@ -18,8 +20,8 @@ const ProductCreate = props => {
         <TextInput source="name" formClassName={classes.inline_block} />
         <TextInput source="smell" formClassName={classes.inline_block_margin} />
         <br />
-        <NumberInput source="weight" formClassName={classes.inline_block} />
-        <NumberInput source="price" formClassName={classes.inline_block_margin} />
+        <TextInput source="weight" formClassName={classes.inline_block} />
+        <NumberInputFormat source="price" formClassName={classes.inline_block_margin} />
         <br />
         <ReferenceInput
           source="productType"
@@ -29,7 +31,7 @@ const ProductCreate = props => {
         >
           <SelectInput optionText="name" />
         </ReferenceInput>
-        <NumberInput source="quantity" formClassName={classes.inline_block_margin} />
+        <NumberInputFormat source="quantity" formClassName={classes.inline_block_margin} />
         <BooleanInput source="status" />
         <BooleanInput source="activated" />
       </SimpleForm>

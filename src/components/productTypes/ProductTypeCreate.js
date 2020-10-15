@@ -2,15 +2,15 @@ import React from 'react';
 import {
   Create,
   SimpleForm,
-  TextInput,
-  BooleanInput
+  BooleanInput,
 } from 'react-admin';
+import { TextInput } from '../../customize/InputCustom';
 
 const ProductTypeCreate = props => {
   return (
     <Create {...props}>
-      <SimpleForm>
-        <TextInput source="name" autoComplete="off"/>
+      <SimpleForm redirect="list">
+        <TextInput source="name" autoComplete="off" />
         <BooleanInput source="activated" />
       </SimpleForm>
     </Create>
