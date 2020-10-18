@@ -100,7 +100,8 @@ export default {
       },
       fields: {
         name: 'Tên sản phẩm',
-        smell: 'Hương vị',
+        smells: 'Hương vị',
+        gifts: 'Quà tặng kèm',
         price: 'Giá tiền',
         weight: 'Trọng lượng',
         productType: 'Loại sản phẩm',
@@ -114,6 +115,20 @@ export default {
       fields: {
         name: 'Loại sản phẩm',
         activated: 'Hoạt động',
+      }
+    },
+    smells: {
+      name: 'Hương vị',
+      fields: {
+        name: 'Tên hương vị',
+        activated: 'Trạng thái'
+      }
+    },
+    gifts: {
+      name: 'Quà tặng kèm',
+      fields: {
+        name: 'Tên quà tặng kèm',
+        activated: 'Trạng thái'
       }
     }
   }

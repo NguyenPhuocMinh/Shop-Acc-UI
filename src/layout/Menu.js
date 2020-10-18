@@ -77,6 +77,20 @@ const Menu = props => {
               onClick={onMenuClick}
               sidebarIsOpen={open}
             />
+            <MenuItemLink
+              to={`/smells`}
+              primaryText={translate('resources.smells.name')}
+              leftIcon={<ChevronRightIcon />}
+              onClick={onMenuClick}
+              sidebarIsOpen={open}
+            />
+            <MenuItemLink
+              to={`/gifts`}
+              primaryText={translate('resources.gifts.name')}
+              leftIcon={<ChevronRightIcon />}
+              onClick={onMenuClick}
+              sidebarIsOpen={open}
+            />
           </SubMenu> : null
         }
         {isXSmall && logout}

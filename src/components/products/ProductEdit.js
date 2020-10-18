@@ -1,22 +1,36 @@
 import React from 'react';
 import {
-  Create,
+  Edit,
   SimpleForm,
   BooleanInput,
   TextInput,
   SelectInput,
   ReferenceInput,
   AutocompleteArrayInput,
-  ReferenceArrayInput
+  ReferenceArrayInput,
+  Toolbar,
+  SaveButton
 } from 'react-admin';
 import { NumberInputFormat } from '../../customize/InputCustom';
 import useStyles from './productStyle';
 
-const ProductCreate = props => {
+const EditToolbar = props => {
+  return (
+    <Toolbar {...props}>
+      <SaveButton />
+    </Toolbar>
+  )
+}
+
+const ProductEdit = props => {
   const classes = useStyles();
   return (
-    <Create {...props}>
-      <SimpleForm redirect="list">
+    <Edit {...props}>
+      <SimpleForm
+        redirect="list"
+        undoable={false}
+        toolbar={<EditToolbar />}
+      >
         <TextInput source="name" formClassName={classes.inline_block} />
         <TextInput source="weight" formClassName={classes.inline_block_margin} />
         <br />
@@ -57,8 +71,8 @@ const ProductCreate = props => {
         <BooleanInput source="status" />
         <BooleanInput source="activated" />
       </SimpleForm>
-    </Create>
+    </Edit>
   )
 }
 
-export default ProductCreate;
+export default ProductEdit;

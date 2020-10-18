@@ -1,12 +1,13 @@
-
 import React from 'react';
 import {
   Datagrid,
   EditButton,
   List,
-  DateField,
   Filter,
-  SearchInput
+  SearchInput,
+  TextField,
+  BooleanField,
+  ReferenceField
 } from 'react-admin';
 
 const ConfigFormFilter = (props) => (
@@ -22,10 +23,15 @@ const ProductList = props => (
     filters={<ConfigFormFilter />}
   >
     <Datagrid {...props}>
-      <DateField
-        source="createdAt"
-        locales="vi-VN" showTime={true}
-      />
+      <TextField source="name" />
+      <ReferenceField
+        source="productType"
+        reference="productTypes"
+      >
+        <TextField source="name" />
+      </ReferenceField>
+      <TextField source="quantity" />
+      <BooleanField source="status" />
       <EditButton />
     </Datagrid>
   </List>

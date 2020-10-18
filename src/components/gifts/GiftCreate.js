@@ -3,18 +3,21 @@ import {
   Create,
   SimpleForm,
   BooleanInput,
+  required,
+  TextInput
 } from 'react-admin';
-import { TextInput } from '../../customize/InputCustom';
 
-const ProductTypeCreate = props => {
+const validateName = [required()]
+
+const GiftCreate = props => {
   return (
     <Create {...props}>
       <SimpleForm redirect="list">
-        <TextInput source="name" />
+        <TextInput source="name" validate={validateName} />
         <BooleanInput source="activated" />
       </SimpleForm>
     </Create>
   )
 };
 
-export default ProductTypeCreate;
+export default GiftCreate;

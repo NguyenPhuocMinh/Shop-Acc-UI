@@ -18,6 +18,8 @@ import themeReducers from './store/reducers/themeReducer';
 import users from './components/users';
 import products from './components/products';
 import productTypes from './components/productTypes';
+import smells from './components/smells';
+import gifts from './components/gifts';
 // end resources
 
 const App = () => {
@@ -69,6 +71,16 @@ const App = () => {
           key="ProductTypes"
           name="productTypes"
           {...productTypes}
+        />,
+        <Resource
+          key="Smells"
+          name="smells"
+          {...smells}
+        />,
+        <Resource
+          key="Gifts"
+          name="gifts"
+          {...gifts}
         />,
       ]}
     </Admin>

@@ -8,21 +8,23 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import {
   useTranslate,
-  showNotification,
+  useNotify,
+  useRedirect
 } from 'react-admin';
-import { connect } from 'react-redux';
 import { Formik, Form } from 'formik';
 import useStyles from './utils/styles';
 import TextFieldCustom from '../../customize/TextFieldCustom';
 import validateForm from './utils/validateForm';
+import { removeLoginInfo } from '../../authProvider/authHandler'
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 const ChangePassWord = props => {
-  const { showNotification } = props;
   const classes = useStyles();
+  const showNotification = useNotify();
+  const redirect = useRedirect();
   const userId = localStorage.getItem('userId');
   const translate = useTranslate();
   const [openDialog, setOpenDialog] = useState(false);
@@ -54,6 +56,8 @@ const ChangePassWord = props => {
           .then(result => {
             showNotification(translate(result.message));
             setOpenDialog(false)
+            removeLoginInfo();
+            redirect('/login')
           })
       })
   };
@@ -155,8 +159,5 @@ const ChangePassWord = props => {
   );
 };
 
-const mapDispatchToProps = {
-  showNotification
-}
 
-export default connect(null, mapDispatchToProps)(ChangePassWord);
+export default ChangePassWord;
