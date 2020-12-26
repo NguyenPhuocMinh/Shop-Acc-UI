@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
   },
   icon: {
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.primary.main,
   },
   hint: {
     marginTop: '1em',

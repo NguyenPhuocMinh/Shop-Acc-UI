@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import SettingsIcon from '@material-ui/icons/Settings';
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   title: {
     flex: 1,
     textOverflow: 'ellipsis',
@@ -15,7 +15,11 @@ const useStyles = makeStyles({
   spacer: {
     flex: 1,
   },
-});
+  appBar: {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText
+  }
+}));
 
 const ConfigurationMenu = forwardRef((props, ref) => {
   const translate = useTranslate();
@@ -41,7 +45,9 @@ const CustomAppBar = props => {
   return (
     <AppBar
       {...props}
-      userMenu={<CustomUserMenu />}>
+      userMenu={<CustomUserMenu />}
+      className={classes.appBar}
+    >
       <Typography
         variant="h6"
         color="inherit"

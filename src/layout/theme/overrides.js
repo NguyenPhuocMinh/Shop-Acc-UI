@@ -5,7 +5,7 @@ export default {
         borderLeft: '3px solid #fff',
       },
       active: {
-        borderLeft: '3px solid #4f3cc9',
+        borderLeft: '3px solid #44986E',
       },
     },
     MuiPaper: {
@@ -20,7 +20,7 @@ export default {
     MuiButton: {
       contained: {
         backgroundColor: '#fff',
-        color: '#4f3cc9',
+        color: '#44986E',
         boxShadow: 'none',
       },
     },
@@ -50,6 +50,6 @@ export default {
       root: {
         paddingTop: 10
       }
-    }
+    },
   },
 }

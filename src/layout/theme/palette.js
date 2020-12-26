@@ -2,7 +2,7 @@ export default {
   lightPalette: {
     palette: {
       primary: {
-        main: '#4f3cc9',
+        main: '#44986E',
       },
       secondary: {
         light: '#5f5fc4',
