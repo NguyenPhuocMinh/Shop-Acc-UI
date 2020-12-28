@@ -27,7 +27,7 @@ import DefaultIcon from '@material-ui/icons/ViewList';
 
 
 const Menu = props => {
-  const { hasDashboard, onMenuClick, dense, logout } = props;
+  const { hasDashboard, onMenuClick, dense = false, logout } = props;
 
   const { permissions } = usePermissions();
   const translate = useTranslate();
