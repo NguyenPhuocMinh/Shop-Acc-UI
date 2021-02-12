@@ -30,6 +30,7 @@ const ConfigurationMenu = forwardRef((props, ref) => {
       primaryText={translate('pos.configuration')}
       leftIcon={<SettingsIcon />}
       onClick={props.onClick}
+      sidebarIsOpen
     />
   );
 });
@@ -47,6 +48,7 @@ const CustomAppBar = props => {
       {...props}
       userMenu={<CustomUserMenu />}
       className={classes.appBar}
+      elevation={1}
     >
       <Typography
         variant="h6"

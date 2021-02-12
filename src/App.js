@@ -51,7 +51,6 @@ const App = () => {
 
   return (
     <Admin
-      title="Shop Acc Admin"
       dataProvider={dataProvider}
       authProvider={authProvider}
       i18nProvider={i18nProvider}
@@ -62,7 +61,32 @@ const App = () => {
       loginPage={Login}
       catchAll={NotFound}
     >
-      {permissions => [
+      <Resource
+        key="Users"
+        name="users"
+        {...users}
+      />
+      <Resource
+        key="Products"
+        name="products"
+        {...products}
+      />
+      <Resource
+        key="ProductTypes"
+        name="productTypes"
+        {...productTypes}
+      />
+      <Resource
+        key="Smells"
+        name="smells"
+        {...smells}
+      />
+      <Resource
+        key="Gifts"
+        name="gifts"
+        {...gifts}
+      />
+      {/* {permissions => [
         <Resource
           key="Users"
           name="users"
@@ -147,26 +171,6 @@ const App = () => {
           name="cards"
           {...gifts}
           options={{
-            // parent: {
-            //   isParent: true,
-            //   menuParent: 'showCards',
-            //   label: 'pos.menu.cards',
-            //   icon: <AccountCircleIcon />,
-            //   roles: ['ADMIN']
-            // },
-            // children: {
-            //   isParent: true,
-            //   menuParent: 'cards',
-            //   label: 'cards',
-            //   icon: <ChevronRightIcon />,
-            //   roles: ['ADMIN']
-            // },
-            // node: {
-            //   menuParent: 'cards',
-            //   label: 'aaaa',
-            //   icon: <ChevronRightIcon />,
-            //   roles: ['ADMIN']
-            // }
             orphan: {
               isOrphan: true,
               label: 'cards',
@@ -175,7 +179,7 @@ const App = () => {
             }
           }}
         />,
-      ]}
+      ]} */}
     </Admin>
   )
 }

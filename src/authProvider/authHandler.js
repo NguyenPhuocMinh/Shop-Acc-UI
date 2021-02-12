@@ -73,6 +73,7 @@ function removeLoginInfo() {
   localStorage.removeItem('expiresAt');
   localStorage.removeItem('userId');
   localStorage.removeItem('permissions');
+  localStorage.removeItem('auth');
 };
 
 function checkExpiredTime() {
@@ -85,7 +86,7 @@ function checkExpiredTime() {
 };
 
 function getLocalStorage(response) {
-  const { token, refreshToken, expiresIn, webConfig } = response;
+  const { token, refreshToken, expiresIn, webConfig, auth } = response;
   const decodedToken = decodeJwt(token);
   localStorage.setItem('token', token);
   localStorage.setItem('refreshToken', refreshToken);
@@ -94,6 +95,7 @@ function getLocalStorage(response) {
   localStorage.setItem('permissions', get(decodedToken, 'userLogin.permissions'));
   localStorage.setItem('userId', decodedToken.userLogin._id);
   localStorage.setItem('config', JSON.stringify(webConfig));
+  localStorage.setItem('auth',  JSON.stringify(auth));
 };
 
 function _prepareHeaders() {

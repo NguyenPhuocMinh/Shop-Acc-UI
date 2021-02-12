@@ -17,10 +17,18 @@ const authProvider = {
   checkAuth: () =>
     localStorage.getItem('token')
       ? Promise.resolve()
-      : Promise.reject({ redirecTo: "/" }),
+      : Promise.reject({ redirectTo: "/" }),
   getPermissions: () => {
     const roles = localStorage.getItem('permissions');
     return roles ? Promise.resolve(roles) : Promise.reject();
+  },
+  getIdentity: () => {
+    try {
+      const { id, fullName, avatar } = JSON.parse(localStorage.getItem('auth'));
+      return Promise.resolve({ id, fullName, avatar });
+    } catch (err) {
+      return Promise.reject(err);
+    }
   }
 };
 
